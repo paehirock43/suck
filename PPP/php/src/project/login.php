@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    //print_r(session_id());
+    //exit;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,4 +45,55 @@
 </body>
 </html>
 <script type= text/javascript>
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type= text/javascript>
+   var session = "<?php echo session_id(); ?>";
+   console.log(session);
+  /* let y =20;
+   z=30;
+    console.log("Hello world JS");*/
+
+    //login();
+    function login(){
+        console.log("Hello function");
+        let username ;
+        let password ;
+        username = document.getElementById("username").value;
+        //console.log(username);
+        password = document.getElementById("password").value;
+        //console.log(password); 
+        let request_data ={
+            "email":username , 
+            "password":password,
+            "session":session
+        }
+        console.log(request_data);
+        let uri = "http://localhost:8080/project/api/get_customer_login.php";
+        //document.getElementById("username").value = "ku@gmail.com";
+        $.ajax({
+            type:"POST",
+            url:uri,
+            async:false,
+            data:JSON.stringify(request_data),
+            success:function(response){
+                console.log("Connect SUCCESS...........");
+                console.log(response);
+                console.log(response.result);
+                console.log(response.message);
+                if(response.result===1){
+                    console.log("go to home.php");
+                    window.location.replace("http://localhost:8080/project/home.php");
+                }else {
+                    console.log("redirect to log.php")
+                    document.getElementById("username").value ="";
+                    document.getElementById("password").value ="";
+                    document.getElementById("username").focus() ;
+                    alert("เข้าสู่ระบบไม่สำเร็จ");
+                }
+            },error:function(error){
+                console.log(error);
+            }
+        });
+    }
 </script>

@@ -1,3 +1,18 @@
+<?php 
+    ob_start();
+    session_start();
+    require "config/config_db.php";
+    $strSQL = "SELECT id,name,session FROM customer WHERE session='".session_id()."'";
+    $query = @mysqli_query($conn,$strSQL);
+    $resultQuery = @mysqli_fetch_array($query);
+    if(@$resultQuery['id']!="" ){
+        //print_r("show form");
+    } else{
+        //print_r("go to login");
+        header("location:http://localhost:8080/project/login.php");     
+    }
+        
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
