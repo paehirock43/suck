@@ -1,4 +1,5 @@
-<?php 
+
+<?php /*
     ob_start();
     session_start();
     require "config/config_db.php";
@@ -11,8 +12,9 @@
         //print_r("go to login");
         header("location:http://localhost:8080/project/login.php");     
     }
-        
+      */  
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,10 +34,21 @@
             <ul>
             <li><a href="#">Menu 1</a></li>
             <li><a href="#">Menu 2</a></li>
+            <!--Add more menu item-->
             </ul>
         </nav>
           <div class="column content" style="background-color:#786fa6 ;"> 
-          <h2>Content</h2>
+            <div class="col-md-3 mb-3">
+                <div class="card" style="background-color":#FFF;margin:5px>
+                    <div class="card-image" style="width: 150px ;height : 150px ;align-item:center;">
+                        <img src="./assets/image/spidey.jpg" class="card-img-top"/>
+        </div>
+                <div class="card-content">
+                    <h5 class="card-title">product name</h5>
+                    <p class="card-text">detail</p>
+                    <p class="card-text">price</p>
+                    <button class="btn btn-danger">add</button>
+                </div>
         </div>
     </div>
         <footer style="background-color: #546de5">
