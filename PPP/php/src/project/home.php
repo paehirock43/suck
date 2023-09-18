@@ -41,7 +41,7 @@
             <div class="col-md-3 mb-3">
                 <div class="card" style="background-color":#FFF;margin:5px>
                     <div class="card-image" style="width: 150px ;height : 150px ;align-item:center;">
-                        <img src="./assets/image/spidey.jpg" class="card-img-top"/>
+                        <img src="./assets/image/spidey.jpg" height="150px"   class="card-img-top"/>
         </div>
                 <div class="card-content">
                     <h5 class="card-title">product name</h5>
@@ -51,8 +51,8 @@
                 </div>
         </div>
     </div>
-        <footer style="background-color: #546de5">
+        <!--<footer style="background-color: #546de5">
             <p>Footer</p>
-        </footer>
+        </footer>-->
 </body>
 </html>
