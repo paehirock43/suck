@@ -11,4 +11,4 @@
 7. CREATE VIEW Q7 AS SELECT order_detail.*, product.ชื่อสินค้า ,product.ราคา,product.ราคา*order_detail.จำนวนซื้อ 
    as รวม FROM order_detail inner join product on order_detail.รหัสสินค้า = product.รหัสสินค้า AND product.รหัสประเภท = 'T01' 
 8. CREATE VIEW Q8 AS SELECT หมายเลขใบสั่งซื้อ,sum(จำนวนซื้อ) as จำนวนซื้อรวม FROM order_detail GROUP by หมายเลขใบสั่งซื้อ
-9. CREATE VIEW Q9 AS SELECT ชื่อสินค้า ,ราคา*1.1 as ราคาใหม่ FROM product
+9. CREATE VIEW Q9 AS SELECT ชื่อสินค้า ,ราคา,ราคา*1.1 as ราคาใหม่ FROM product
