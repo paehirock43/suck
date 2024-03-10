@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Form Page{% endblock %}
+{% block content %}
+    <div class='p-4'>
+        <h1>Access Records: </h1>
+        {% if accessRecordsData %}
+            <table class='table'>
+                <tr>
+                    <th>Username</th>
+                    <th>Date Accessed</th>
+                </tr>
+                {% for accessRecord in accessRecordsData %}
+                    <tr>
+                        <td>{{ accessRecord.userName }}</td>
+                        <td>{{ accessRecord.dateAccessed }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No access records found.</p>
+        {% endif %}
+    </div>
+{% endblock %}

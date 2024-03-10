@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+    <div class="d-flex flex-column align-items-center">
+        <h1>Home Page</h1>
+        {{ homeData }}
+        <img src='{% static "img/rabbit.png" %}' width='200px' height='200px' alt='Rabbit photo' />
+    </div>
+{% endblock %}
